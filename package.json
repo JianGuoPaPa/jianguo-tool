@@ -8,9 +8,13 @@
         "url": "git+https://github.com/JianGuoPaPa/jianguo-tool"
     },
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "webpack"
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "webpack": "^5.69.1",
+        "webpack-cli": "^4.9.2"
+    }
 }
