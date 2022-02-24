@@ -1,20 +1,20 @@
 {
     "name": "jianguo-tool",
-    "version": "1.0.3",
-    "description": "",
-    "main": "index.js",
+    "version": "1.0.4",
+    "description": "personal practice tool function by jianguopapa",
+    "main": "src/index.js",
+    "homepage": "https://github.com/JianGuoPaPa/jianguo-tool",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/JianGuoPaPa/jianguo-tool"
     },
-    "scripts": {
-        "build": "webpack"
+    "keywords": [
+        "tool",
+        "javascript",
+        "function"
+    ],
+    "author": {
+        "name": "jianguopapa"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "webpack": "^5.69.1",
-        "webpack-cli": "^4.9.2"
-    }
+    "license": "MIT"
 }
