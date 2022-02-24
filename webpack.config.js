@@ -8,6 +8,8 @@ module.exports = {
         library: {
             name: 'jianguoTool',
             type: 'umd'
-        }
+        },
+        // inorder to use in both browser and node
+        globalObject: 'this'
     }
 };
