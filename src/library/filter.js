@@ -13,10 +13,10 @@
  * @return {*}
  */
 function filterHTML(str) {
-  var str = str.replace(/<\/?[^>]*>/g, ""); //去除HTML Tag
-  str = str.replace(/[|]*\n/, ""); //去除行尾空格
-  str = str.replace(/&npsp;/gi, ""); //去掉npsp
-  return str;
+    var str = str.replace(/<\/?[^>]*>/g, ''); //去除HTML Tag
+    str = str.replace(/[|]*\n/, ''); //去除行尾空格
+    str = str.replace(/&npsp;/gi, ''); //去掉npsp
+    return str;
 }
 
 /**
@@ -25,11 +25,11 @@ function filterHTML(str) {
  * @return {*}
  */
 function findKV(arr, key, value) {
-  if (arr.length === 0) return [];
-  return arr.filter((item) => item[key] === value)[0];
+    if (arr.length === 0) return [];
+    return arr.filter(item => item[key] === value)[0];
 }
 
 export default {
-  filterHTML,
-  findKV,
+    filterHTML,
+    findKV
 };

@@ -13,9 +13,9 @@
  * @return {*}
  */
 function isIdsn(str) {
-  // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X
-  var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
-  return reg.test(str);
+    // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X
+    var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+    return reg.test(str);
 }
 
 /**
@@ -24,8 +24,8 @@ function isIdsn(str) {
  * @return {*}
  */
 function isMobile(str) {
-  var reg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
-  return reg.test(str);
+    var reg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
+    return reg.test(str);
 }
 
 /**
@@ -34,37 +34,37 @@ function isMobile(str) {
  * @return {*}
  */
 function toFormData(rawObj) {
-  //对象转formdata格式
-  let formData = new FormData();
-  let obj = rawObj.data;
-  let arrayKey = rawObj.arrayKey;
-  for (var i in obj) {
-    if (isArray(obj[i])) {
-      obj[i].map((item) => {
-        if (!arrayKey) {
-          formData.append(i, item);
+    //对象转formdata格式
+    let formData = new FormData();
+    let obj = rawObj.data;
+    let arrayKey = rawObj.arrayKey;
+    for (var i in obj) {
+        if (isArray(obj[i])) {
+            obj[i].map(item => {
+                if (!arrayKey) {
+                    formData.append(i, item);
+                } else {
+                    formData.append(i + '[]', item);
+                }
+            });
+        } else if (obj[i] instanceof FileList) {
+            //filelist 文件类型的处理
+            for (var fileItem = 0; fileItem < obj[i].length; fileItem++) {
+                if (!arrayKey) {
+                    formData.append(i, obj[i].item(fileItem));
+                } else {
+                    formData.append(i + '[]', obj[i].item(fileItem));
+                }
+            }
         } else {
-          formData.append(i + "[]", item);
+            formData.append(i, obj[i]);
         }
-      });
-    } else if (obj[i] instanceof FileList) {
-      //filelist 文件类型的处理
-      for (var fileItem = 0; fileItem < obj[i].length; fileItem++) {
-        if (!arrayKey) {
-          formData.append(i, obj[i].item(fileItem));
-        } else {
-          formData.append(i + "[]", obj[i].item(fileItem));
-        }
-      }
-    } else {
-      formData.append(i, obj[i]);
     }
-  }
-  return formData;
+    return formData;
 }
 
 export default {
-  isIdsn,
-  isMobile,
-  toFormData,
+    isIdsn,
+    isMobile,
+    toFormData
 };

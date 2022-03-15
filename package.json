@@ -1,7 +1,8 @@
 {
     "name": "jianguo-tool",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "personal practice tool function by jianguopapa",
+    "type": "module",
     "main": "src/index.js",
     "homepage": "https://github.com/JianGuoPaPa/jianguo-tool",
     "repository": {
